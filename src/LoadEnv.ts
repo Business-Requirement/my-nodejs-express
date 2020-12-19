@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
 import logger from '@shared/logger/Logger';
-import connect from './configuration/db/mongoose.connect'
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -14,12 +13,5 @@ if (result.error) {
     throw result.error;
 } else {
     logger.info(`Loaded environment: ${envFile}`)
-}
-
-/************************************************************************************
- *                              connect to mongo db
- ***********************************************************************************/
-if (process.env.NODE_ENV === 'development') { //  : for test
-    connect();
 }
 
